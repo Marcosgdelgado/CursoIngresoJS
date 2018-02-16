@@ -1,27 +1,42 @@
 function Mostrar()
 {
 	//Genero el número RANDOM entre 1 y 10 
-	var numeroRandom
+	var nota
 
-	numeroRandom= document.getElementById('FormIngreso').innerHTML;
-	numeroRandom= Math.floor(Math.random() * 10) + 1;
+	nota= document.getElementById('FormIngreso').innerHTML;
+	nota= Math.floor(Math.random() * 10) + 1;
 
-	if(numeroRandom>=9)
+	if(nota>8)
 	{
-		alert(numeroRandom);
-		alert("Excelente");
+		alert( nota + " Excelente");
+	}
+	else 
+	{
+		if(nota>3)
+		{
+			alert(nota + " Aprobo");
+		}
+		else 
+		{
+			alert(nota + " Vamos, la proxima se puede");
+		}
+	}
+	
+	
+	/*if(numeroRandom>=9)
+	{
+		alert(numeroRandom + " Excelente");
 	}
 	if (numeroRandom>4 && numeroRandom<9)
 	{
-		alert(numeroRandom);
-		alert("Aprobo");
+		alert(numeroRandom +" Aprobo");
 
 	}
 	if (numeroRandom<3)
 	{
-		alert(numeroRandom);
-		alert("¡Vamos! la proxima se puede");
-	}
+		alert(numeroRandom+" ¡Vamos! la proxima se puede");
+		
+	}*/
 }
 	/*if(numeroRandom<4)
 	{
