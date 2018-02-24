@@ -19,15 +19,15 @@ function Mostrar()
 		{
 			positivo=positivo+numero;
 		}
+			else
+			{
+				if(numero<1)
+				{
+					negativo=negativo*numero;
+				}
 
-		if(negativo<0)
-		{
-			negativo=negativo-numero;
-		}
-
-
-
-
+			}
+		
 
 		respuesta= prompt("para continuar, si");
 	}
