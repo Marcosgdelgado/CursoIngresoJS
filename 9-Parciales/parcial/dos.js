@@ -1,17 +1,16 @@
 function Mostrar()
 {
   
-    var a;
-    var b;
+    var importe;
     var resultado;
+
+    importe=prompt("Ingrese importe:");
+    importe=parseInt(importe);
     
- 
-  	prompt("Ingrese un importe");
-	a=document.getElementById('importeFinal').value;
-	a=parseInt(a);
+    resultado=importe*0.21;
+    resultado=importe+resultado;
     
-    b=0.21;
-    resultado= a*b;
+
 	document.getElementById('importeFinal').value=resultado;
-	parseInt(resultado);
+	
 }
