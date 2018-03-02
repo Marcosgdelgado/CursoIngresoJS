@@ -1,16 +1,31 @@
 
 function Mostrar()
 {
-var num1
-var num2
-var resultado
+var base;
+var altura;
+var lado=3;
+var resultadoPerimetro;
+var resultadoSuperficie;
 
-num1=document.getElementById('laBase').value;
-num1=parseInt(num1);
+base=document.getElementById('laBase').value;
+base=parseInt(base);
 
-num2=4;
+altura=prompt("ingrese altura");
+altura=parseInt(altura);
 
-resultado=num1*num2;
+resultadoPerimetro=base*lado;
+resultadoSuperficie=altura*base/2;
 
-alert("El perimetro es "+resultado);
+
+
+
+alert("El perimetro es "+resultadoPerimetro);
+alert("La superfcie es "+resultadoSuperficie);
 }
+
+
+
+
+
+//perdir base y altura por triangulo equilatero
+//e informar superfcie

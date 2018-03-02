@@ -1,16 +1,23 @@
 function Mostrar()
 {
-  
-    var importe;
-    var resultado;
+  var importe;
+  var descuento;
+  var resultado;
 
-    importe=prompt("Ingrese importe:");
-    importe=parseInt(importe);
-    
-    resultado=importe*0.21;
-    resultado=importe+resultado;
-    
+  importe=prompt("ingrese importe");
+  importe=parseInt(importe);
 
-	document.getElementById('importeFinal').value=resultado;
-	
+  descuento=prompt("ingrese un descuento");
+  descuento=parseInt(descuento);
+
+  resultado=importe*descuento;
+  resultado=resultado/100;
+  resultado=importe-resultado;
+
+  document.getElementById('importeFinal').value=resultado;
 }
+
+
+
+
+
