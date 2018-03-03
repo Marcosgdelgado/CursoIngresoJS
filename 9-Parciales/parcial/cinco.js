@@ -1,6 +1,6 @@
 function Mostrar()
 
-{
+/*{
 	var numeroUno;
 	var numeroDos;
 	var numeroTres;
@@ -32,22 +32,26 @@ function Mostrar()
 		}
 	
 		alert("El mayor es: "+resultado);
-}
+}*/
 
 
 
 
 
-/*{
+{
 	var dia;
 	dia=prompt("Ingrese día: ");
+	dia= díaia.toLowerCase();
+	
 
 	switch(dia)
 	{
-		case "Sabado":
-		case "Domingo":
+		case "sabado":
+		case "domingo":
 			alert("Es fin de semana!!");
 				break;
+		default:
+			alert("A trabajar!!");	
 
 	}
-}*/
+}
