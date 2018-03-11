@@ -3,66 +3,82 @@ function Mostrar()
 //los datos son: nombre del animal, peso del animal(mayor a 0) y temperatura del habitat(entre -40 a +40).
 //informar: nombre del animal mas pesado, nombre del animal de la temp mas baja, 
 //la cantidad de temp pares que se ingresaron, promedio de peso de todos los animales, temp max y min.
-/*{
-	var nombreAnimal;
-	var pesoAnimal;
-	var temperaturaHabitat;
-	var maxPeso;
-	var minTemperatura;
-	var temperaturaPar;
-	var respuesta="si";
+{
+	var nombre;
+	var peso;
+	var temperatura;
+	var temperaturaMinima=0;
+	var pesoMaximo=0;
+	var seguir=true;
+	var flag=false;
+	var acumuladorPeso=0;
+	var promedio;
 	var contador=0;
-	var temperaturaPar;
-	var temperatudaMin;
-	
+	var temperaturaPar=0;
+	var temperaturaMaxima=0;
+	var animalPesado;
+	var animalFrio;
+	while(seguir==true)
 
-	for(i=0; ; i++)
 	{
-		while(respuesta!="no")
-		{			
-			nombreAnimal=prompt("Ingrese nombre del animal: ");
-	
-			pesoAnimal=prompt("Ingrese peso del animal: ");
-			pesoAnimal=parseInt(pesoAnimal);
-
-			temperaturaHabitat=prompt("Ingrese temperatura del habitad: ");
-			temperaturaHabitat=parseInt(temperaturaHabitat);
-
-			while(isNaN(pesoAnimal) && pesoAnimal>0)
-			{
-				pesoAnimal=prompt("Ingrese peso por favor");
-				pesoAnimal=parseInt(pesoAnimal);
-			}
-				while(isNaN(temperaturaHabitat) || temperaturaHabitat<-41 || temperaturaHabitat>40)
-				{
-					temperaturaHabitat=prompt("Ingrese una temperatura por favor");
-					temperaturaHabitat=parseInt(temperaturaHabitat);
-				}
-	
+		nombre=prompt("Ingrese nombre de animal: ");
+		peso=prompt("Ingrese peso de animal: ");
+		peso=parseInt(peso);
+		temperatura=prompt("Ingrese temperatura de habitat entre -40° y 40°: ");
+		temperatura=parseInt(temperatura);
+		contador++;
 		
-					if(contador==0)
-					{
-						contador++;
-						pesoAnimal=nombreAnimal;
-						pesopesado=peso;
-						minTemperatura=temperaturaHabitat;
-						nombrefrio=nombre;
-						temperatudamax=temperatuda;
-					}
-				else
+		while(isNaN(peso) || peso<0)
 			{
-				if()
+				peso=prompt("Ingrese un peso por favor: ");
+				peso=parseInt(peso);
+			} 
+		while(isNaN(temperatura) || temperatura<-40 || temperatura>40)
+			{
+				temperatura=prompt("Ingrese una temperatura entre -40° y 40°, por favor: ");
+				temperatura=parseInt(temperatura);
+			}	
+				acumuladorPeso+=peso;
+		
+		if(temperatura%2==0 && temperatura<0 && temperatura==0)
+		{
+			temperaturaPar++;
+		}		
+		
+		if(flag==false || peso>pesoMaximo )
+			{
+				pesoMaximo=peso;
+				animalPesado=nombre;
+				
+				
 			}
 
-		
+		if(flag==false || temperatura<temperaturaMinima)
+			{
+				temperaturaMinima=temperatura;
+				animalFrio=nombre;
+				
+			}
+		if(flag==false || temperatura>temperaturaMaxima)
+			{
+				temperaturaMaxima=temperatura;
+				flag=true;
+			}		
 
-			respuesta=prompt("Desea continuar ?");
-		}
 
+
+
+		seguir=confirm("Desea continuar ?");
 	}	
-		document.write(nombreAnimal+ "El peso maximo es "+pesoAnimal+" La temperatura de su habitat es: "+temperaturaHabitat);
-	
-}*/
+
+		promedio=acumuladorPeso/contador;
+	document.write("Nombre del animal mas pesado: "+animalPesado+" "+pesoMaximo+"kg"+ "<br>"+ "Nombre del animal con temperatura mas baja: "+animalFrio+" "+temperaturaMinima+"°"+"<br>"+"Temperatura Maxima: "+temperaturaMaxima+"°"+"<br>"+"Promedio de pesos ingresados: "+promedio);
+	document.write("<br>"+"Cantidad de temperaturas par: "+temperaturaPar);
+}
+
+
+
+/*
 {
 	var numero;
 	var seguir=true;
@@ -95,10 +111,16 @@ function Mostrar()
 		if(flag==false|| numero<minimo)
 		{
 			minimo=numero;
-			flag=true;
+			
 		}
-
+		if(flag==false || numero>maximo)
+		{
+			maximo=numero;
+			flag=true;
+			
+		}
 		contador++;
+		
 		seguir=confirm("desea ingresar otro?");
 
 
@@ -108,25 +130,6 @@ function Mostrar()
 
 	document.write("promedio: "+ promedio+"<br>");
 	document.write("sumatoria: "+acumulador+"<br>");
-	document.write("maximo: "+maximo+ "minimo: "+minimo+"<br>");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	document.write("maximo: "+maximo+"<br>"+ "minimo: "+minimo);
 }
+*/ 
